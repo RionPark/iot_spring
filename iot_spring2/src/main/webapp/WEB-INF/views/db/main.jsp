@@ -44,10 +44,10 @@ var aLay, bLay, cLay;
 var bTabs, bTab1, bTab2, bTab3;
 var tableInfoGrid, tabeDataGrid;
 function columnListCB(res){
-	if(res.list){
+	if(res.cList){ 
 		tableInfoGrid = bTabs.tabs("tableInfo").attachGrid();
 		tabeDataGrid = bTabs.tabs("tableData").attachGrid();
-		var columns = res.list[0];
+		var columns = res.cList[0];
 		var headerStr = "";
 		var colTypeStr = "";
 		for(var key in columns){
@@ -62,6 +62,15 @@ function columnListCB(res){
 		tableInfoGrid.setColTypes(colTypeStr);
         tableInfoGrid.init();
 		tableInfoGrid.parse({data:res.cList},"js");
+
+		var columns = res.dList[0];
+		var headerStr = "";
+		var colTypeStr = "";
+		for(var key in columns){
+			if(key=="id") continue;
+			headerStr += key + ",";
+			colTypeStr += "ro,";
+		}
 		tabeDataGrid.setColumnIds(headerStr);
 		tabeDataGrid.setHeader(headerStr);
 		tabeDataGrid.setColTypes(colTypeStr);
@@ -71,6 +80,7 @@ function columnListCB(res){
 		console.log(res);
 	}
 }
+
 function connectionListCB(res){
 	dbTree = aLay.attachTreeView({
 	    items: res.list

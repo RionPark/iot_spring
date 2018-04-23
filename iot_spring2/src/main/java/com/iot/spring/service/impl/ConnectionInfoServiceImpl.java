@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.iot.spring.common.dbcon.DBConnector;
 import com.iot.spring.dao.ConnectionInfoDAO;
+import com.iot.spring.dao.impl.ConnectionInfoDAOImpl;
 import com.iot.spring.service.ConnectionInfoService;
 import com.iot.spring.vo.ColumnVO;
 import com.iot.spring.vo.ConnectionInfoVO;

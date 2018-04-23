@@ -92,9 +92,10 @@ public class ConnectionInfoController {
 		pMap.put("tableName", tableName);
 		try{
 			List<ColumnVO> columnList = cis.getColumnList(hs, pMap);
+			tableName = dbName+"."+tableName;
 			List<Map<String,Object>> datas = cis.getDatas(hs, tableName);
 			map.put("cList", columnList);
-			map.put("dList", datas);
+			map.put("dList", datas); 
 		}catch(Exception e){
 			map.put("error", e.getMessage());
 			log.error(e.getMessage());

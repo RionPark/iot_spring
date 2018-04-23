@@ -54,7 +54,13 @@
 			dhtmlx.alert({text:res.msg,
 				callback: function(){
 					if(res.biz){
-						location.href="${root}/path/db/main";
+						var url='';
+						if(res.id=="mhj"){
+							url = 'arduino/jhj_wifi';
+						}else{
+							url = 'arduino/tippler_wifi';
+						}
+						location.href="${pPath}/" + url;
 					}
 				}
 			});
