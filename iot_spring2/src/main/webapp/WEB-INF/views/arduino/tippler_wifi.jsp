@@ -40,7 +40,7 @@ $(document).ready(function(){
 	$(".led").click(function(){
 		var p = $(this).attr('id');
 		$.ajax({
-			url : "http://jiot.iptime.org:8001",
+			url : "http://jiot2.iptime.org:8001",
 			data : {pin:p},
 			success : callBack,
 			dataType : "json"

@@ -71,7 +71,7 @@
 			$("button").click(function() {
 				var num = this.value * 1;
 				$.ajax({
-					url : "http://jiot.iptime.org:8002",
+					url : "http://jiot2.iptime.org:8002",
 					data : {
 						"pin" : num
 					},
